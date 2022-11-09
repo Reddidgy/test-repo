@@ -1,6 +1,5 @@
-FROM openjdk:8
-ADD ./target/myproject-0.0.1-SNAPSHOT.jar /myproject-0.0.1-SNAPSHOT.jar
-ADD ./run.sh /run.sh
-RUN chmod a+x /run.sh
-EXPOSE 7777:8080
-CMD /run.sh
+FROM openjdk:11
+ADD ./target/rda-0.0.1-SNAPSHOT.jar /rda-0.0.1-SNAPSHOT.jar
+EXPOSE 8080:8080
+EXPOSE 8081:8081
+CMD ["java", "-jar", "/rda-0.0.1-SNAPSHOT.jar"]
